@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kokecoco 掲示板</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Kokecoco 掲示板</h1>
+    <div id="user-info">
+      <span id="user-name"></span>
+      <button id="login-btn">ログイン</button>
+      <button id="logout-btn" style="display: none">ログアウト</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="new-post-section">
+      <h2>新しい投稿</h2>
+      <form id="new-post-form">
+        <input type="text" id="post-title" placeholder="タイトル" required />
+        <textarea id="post-content" placeholder="内容" required></textarea>
+        <input type="text" id="post-tags" placeholder="タグ (カンマで区切ってください)" />
+        <button type="submit">投稿する</button>
+      </form>
+    </section>
+
+    <section id="posts-section">
+      <h2>投稿一覧</h2>
+      <div id="posts-container">
+        <p>投稿がありません。</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
