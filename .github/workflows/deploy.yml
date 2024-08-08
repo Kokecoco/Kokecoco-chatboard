@@ -24,7 +24,7 @@ jobs:
     - name: Build project
       env:
         FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
-        MANAGER_EMAIL_ADDRESS: ${{ secrents.MANAGER_EMAIL_ADDRESS }}
+        MANAGER_EMAIL_ADDRESS: ${{ secrets.MANAGER_EMAIL_ADDRESS }}
       run: |
         # ビルドコマンドを実行（例: npm run build）
         npm run build
