@@ -21,7 +21,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCMZVVnHmuA4j8Pi-hrlQsc2INHD-OeW-8",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "kokecoco-keijiban.firebaseapp.com",
   projectId: "kokecoco-keijiban",
   storageBucket: "kokecoco-keijiban.appspot.com",
@@ -49,7 +49,7 @@ let currentUser = null;
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // ドメインチェック
-    const allowedEmails = ["kaede.w0918@gmail.com"];
+    const allowedEmails = [process.env.MANAGER_EMAIL_ADDRESS];
     const allowedDomain = "gll-kaisei-s.sapporo-c.ed.jp";
     const emailDomain = user.email.split("@")[1];
     if (emailDomain !== allowedDomain && !allowedEmails.includes(user.email)) {
